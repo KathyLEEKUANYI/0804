@@ -1,0 +1,27 @@
+<h1>lit<h1>
+
+<%= link_to "add" , new_book_path %>
+<table>
+
+<tr>
+<td>title</td>
+<td>content</td>
+<td>price</td>
+</tr>
+
+<% @book.each do |book| %>
+
+<tr>
+<td><%= link_to book.title , book_path(book.id)%></td>
+<td><%= link_to book.content , book_path(book.id)%></td>
+<td><%= link_to book.price , book_path(book.id)%></td>
+<td>
+   <%= link_to "update" , edit_book_path(book.id)%>
+	 <%= link_to "delete" , book_path(book.id) , method:"delete" , data:{confirm:"ok"}%>
+</td>
+</tr>
+
+<% end %>
+
+
+</table>

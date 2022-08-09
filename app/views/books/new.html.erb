@@ -1,0 +1,16 @@
+<h1>add<h1>
+
+<%= form_for @book do |book| %>
+
+1
+<%= book.text_field :title %>
+
+2
+<%= book.text_area :content %>
+
+3
+
+<%= book.number_field :price %>
+
+<%= book.submit %>
+<% end %>
